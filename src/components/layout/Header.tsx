@@ -42,14 +42,18 @@ export const Header = memo(() => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-soft group-hover:scale-105 transition-transform">
-              <Heart className="w-5 h-5 text-foreground fill-current" />
-            </div>
-            <span className="font-heading font-bold text-xl text-foreground">
-              Naari<span className="text-accent">Care</span>
-            </span>
-          </Link>
+          {/* Logo */}
+<Link to="/" className="flex items-center gap-3 group">
+  <img
+    src="/favicon.ico"
+    alt="NaariCare Logo"
+    className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-105"
+  />
+  <span className="font-heading font-bold text-xl bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 bg-clip-text text-transparent">
+    NaariCare
+  </span>
+</Link>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">

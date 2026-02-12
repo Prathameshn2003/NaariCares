@@ -29,15 +29,19 @@ export const Footer = forwardRef<HTMLElement>((props, ref) => {
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <Heart className="w-5 h-5 text-foreground fill-current" />
-              </div>
-              <span className="font-heading font-bold text-xl text-foreground">
-                Naari<span className="text-accent">Care</span>
-              </span>
-            </Link>
+         {/* Brand */}
+<div className="lg:col-span-2">
+  <Link to="/" className="flex items-center gap-3 mb-4 group">
+    <img
+      src="/favicon.ico"
+      alt="NaariCare Logo"
+      className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-105"
+    />
+    <span className="font-heading font-bold text-xl bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 bg-clip-text text-transparent">
+      NaariCare
+    </span>
+  </Link>
+
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
               AI-powered women's health platform providing personalized insights, 
               predictions, and guidance for your wellness journey.

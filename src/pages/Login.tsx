@@ -94,14 +94,20 @@ const Login = () => {
 
       <div className="w-full max-w-md relative z-10">
         {/* Logo */}
-        <Link to="/" className="flex items-center justify-center gap-2 mb-8">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-glow">
-            <Heart className="w-6 h-6 text-foreground fill-current" />
-          </div>
-          <span className="font-heading font-bold text-2xl text-foreground">
-            Naari<span className="text-accent">Care</span>
-          </span>
-        </Link>
+        {/* Logo */}
+<Link to="/" className="flex flex-col items-center mb-8">
+  <img
+    src="/favicon.ico"
+    alt="NaariCare Logo"
+    className="w-20 h-20 object-contain mb-3 drop-shadow-lg"
+  />
+  <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 bg-clip-text text-transparent">
+    NaariCare
+  </h1>
+  <p className="text-xs text-muted-foreground mt-1">
+    AI Powered Women's Health Companion
+  </p>
+</Link>
 
         {/* Login Card */}
         <div className="glass-card rounded-2xl p-8">

@@ -71,18 +71,25 @@ export const DashboardSidebar = () => {
       )}
     >
       {/* Logo */}
-      <div className="p-4 border-b border-sidebar-border">
-        <NavLink to="/" className="flex items-center gap-2.5">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-sm">
-            <Heart className="w-5 h-5 text-primary-foreground fill-current" />
-          </div>
-          {!isCollapsed && (
-            <span className="font-heading font-bold text-lg text-sidebar-foreground">
-              Naari<span className="text-accent">Care</span>
-            </span>
-          )}
-        </NavLink>
-      </div>
+      {/* Logo */}
+<div className="p-4 border-b border-sidebar-border">
+  <NavLink to="/" className="flex items-center gap-3">
+    <img
+      src="/favicon.ico"
+      alt="NaariCare Logo"
+      className={cn(
+        "object-contain transition-all duration-300",
+        isCollapsed ? "w-10 h-10" : "w-12 h-12"
+      )}
+    />
+
+    {!isCollapsed && (
+      <span className="font-heading font-bold text-lg bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 bg-clip-text text-transparent">
+        NaariCare
+      </span>
+    )}
+  </NavLink>
+</div>
 
       {/* Navigation */}
       <div className="flex-1 overflow-y-auto custom-scrollbar p-3">

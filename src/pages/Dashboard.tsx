@@ -154,14 +154,18 @@ const Dashboard = () => {
           
           <div className="relative z-10">
             {/* NaariCare Logo */}
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
-                <Heart className="w-6 h-6 text-primary-foreground fill-current" />
-              </div>
-              <span className="font-heading font-bold text-xl text-foreground">
-                Naari<span className="text-accent">Care</span>
-              </span>
-            </div>
+           {/* NaariCare Logo */}
+<div className="flex items-center gap-3 mb-4">
+  <img 
+    src="/favicon.ico" 
+    alt="NaariCare Logo"
+    className="w-12 h-12 object-contain rounded-lg shadow-md"
+  />
+  <span className="font-heading font-bold text-xl text-foreground">
+    Naari<span className="text-accent">Care</span>
+  </span>
+</div>
+
             
             <div className="flex items-center gap-2 text-muted-foreground mb-2">
               <greeting.icon className="w-4 h-4" />
