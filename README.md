@@ -1,73 +1,224 @@
-# Welcome to your Lovable project
 
-## Project info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+# 🌸 NaariCare – AI Powered Women's Health & Wellness Platform
 
-There are several ways of editing your application.
+## 📌 Project Overview
 
-**Use Lovable**
+**NaariCare** is a full-stack AI-powered web application designed to empower women with personalized reproductive health insights.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+It provides:
 
-Changes made via Lovable will be committed automatically to this repo.
+* 🌺 Menstrual Cycle Tracking with ML-based predictions
+* 🧠 PCOS Risk Assessment with weighted scoring
+* 🌼 Menopause Symptom Evaluation
+* 🤖 AI Health Chatbot
+* 🏥 Nearby Doctors Discovery
+* 📚 Health Education Resources
+* 🏛 Government Schemes for Women
+* 🔐 Secure Authentication & Role-Based Admin Panel
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Live Project URL
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+👉 [https://your-domain.com](https://your-domain.com)
+*(Replace with your deployed URL – e.g., Vercel domain)*
 
-Follow these steps:
+---
+
+# 🛠 How to Edit This Project
+
+There are multiple ways to work on NaariCare.
+
+---
+
+## 💻 Use Your Preferred IDE (Recommended)
+
+### Requirements:
+
+* Node.js (v18+ recommended)
+* npm
+
+Install Node using nvm (optional):
+[https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+### Steps:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Step 2: Navigate into the project
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Run development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Your app will start at:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+http://localhost:5173
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## ✏️ Edit Directly in GitHub
 
-## What technologies are used for this project?
+* Go to the file
+* Click the ✏️ Edit button
+* Make changes
+* Commit changes
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## ☁️ Use GitHub Codespaces
 
-## How can I deploy this project?
+* Go to repository main page
+* Click **Code**
+* Select **Codespaces**
+* Click **New Codespace**
+* Edit & push changes
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+# 🧱 Technology Stack
 
-Yes, you can!
+NaariCare is built with:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### 🎨 Frontend
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+* React 18
+* TypeScript
+* Vite
+* Tailwind CSS
+* shadcn/ui
+* Framer Motion
+
+### ⚙ Backend
+
+* Supabase (PostgreSQL Database)
+* Supabase Auth (GoTrue)
+* Supabase Edge Functions
+* Supabase Storage
+
+### 🧠 AI / ML
+
+* Custom PCOS Risk Scoring Algorithm
+* Weighted Moving Average Cycle Prediction
+* Edge Function based AI Chat Service
+
+### 🔄 State Management
+
+* TanStack React Query
+* React Context API
+
+### 🌐 Routing
+
+* React Router v6
+
+---
+
+# 📦 Project Structure
+
+```
+src/
+ ├── components/
+ ├── hooks/
+ ├── pages/
+ ├── services/
+ ├── lib/
+ ├── context/
+ └── main.tsx
+```
+
+---
+
+# 🚀 Deployment Guide
+
+## Option 1: Deploy on Vercel (Recommended)
+
+1. Push code to GitHub
+2. Go to [https://vercel.com](https://vercel.com)
+3. Import repository
+4. Add environment variables
+5. Click Deploy
+
+---
+
+## 🔑 Environment Variables Required
+
+Create `.env` file:
+
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_anon_key
+```
+
+---
+
+# 🔐 Security Features
+
+* Row Level Security (RLS)
+* JWT-based Authentication
+* Role-based Access Control (Admin/User)
+* Protected Routes
+* Environment variable protection
+
+---
+
+# 📊 Core Algorithms
+
+### PCOS Risk Formula
+
+```
+totalScore = 2×cycleScore + 2×ultrasoundScore + hormonalScore + metabolicScore + lifestyleScore
+```
+
+### Cycle Prediction
+
+Weighted Moving Average (Last 6 cycles)
+
+---
+
+# 📈 Non-Functional Strengths
+
+* ⚡ Fast loading (<2 seconds)
+* 📱 Fully responsive
+* 🔒 Secure backend
+* 📊 Scalable architecture
+* 🌍 Ready for multi-language support
+
+---
+
+# 👨‍💻 Developed By
+
+**Prathamesh Malhari Nalawade**
+Final Year B.E Project – 2026
+
+Project Title:
+**NaariCare – AI Powered Women's Health Companion**
+
+---
+
+# 📌 Future Scope
+
+* Multi-language support (Hindi, Tamil, Marathi, etc.)
+* Wearable device integration
+* Native mobile app
+* Advanced ML model training
+* Telemedicine integration
+
+---
+
+# 📜 License
+
+This project is developed for academic and educational purposes.
+
+---
+
