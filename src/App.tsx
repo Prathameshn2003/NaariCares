@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import ScrollToTop from "./ScrollToTop";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,7 +7,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
-// ScrollToTop handled by useScrollToTop hook in DashboardLayout
 
 // Eager load critical pages
 import Index from "./pages/Index";
@@ -34,24 +34,24 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-// Admin pages - lazy loaded
+// Admin pages
 const AdminUsersPage = lazy(() => import("./pages/admin/AdminUsersPage"));
 const AdminResourcesPage = lazy(() => import("./pages/admin/AdminResourcesPage"));
 const AdminSchemesPage = lazy(() => import("./pages/admin/AdminSchemesPage"));
 
-// Optimized QueryClient with caching
+// QueryClient configuration
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      gcTime: 10 * 60 * 1000, // 10 minutes (formerly cacheTime)
+      staleTime: 5 * 60 * 1000,
+      gcTime: 10 * 60 * 1000,
       retry: 1,
       refetchOnWindowFocus: false,
     },
   },
 });
 
-// Loading fallback
+// Loading component
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
     <div className="animate-pulse flex flex-col items-center gap-2">
@@ -66,9 +66,12 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+
       <BrowserRouter>
+        {/* ✅ Scroll to top on every route change */}
+        <ScrollToTop />
+
         <AuthProvider>
-          
           <Suspense fallback={<PageLoader />}>
             <Routes>
               {/* Public routes */}
@@ -81,7 +84,7 @@ const App = () => (
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/contact" element={<Contact />} />
-              
+
               {/* Protected routes */}
               <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
               <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
@@ -95,23 +98,25 @@ const App = () => (
               <Route path="/health-resources" element={<ProtectedRoute><HealthResources /></ProtectedRoute>} />
               <Route path="/hygiene" element={<ProtectedRoute><Hygiene /></ProtectedRoute>} />
               <Route path="/education" element={<ProtectedRoute><Education /></ProtectedRoute>} />
-              
-              {/* Redirect old education paths to modules */}
+
+              {/* Redirect old education paths */}
               <Route path="/education/pcos" element={<Navigate to="/modules/pcos" replace />} />
               <Route path="/education/menopause" element={<Navigate to="/modules/menopause" replace />} />
               <Route path="/education/menstrual" element={<Navigate to="/modules/menstrual" replace />} />
-              
-              {/* Admin routes - protected and require admin role */}
+
+              {/* Admin routes */}
               <Route path="/admin" element={<Navigate to="/admin/users" replace />} />
               <Route path="/admin/users" element={<ProtectedRoute requireAdmin><AdminUsersPage /></ProtectedRoute>} />
               <Route path="/admin/resources" element={<ProtectedRoute requireAdmin><AdminResourcesPage /></ProtectedRoute>} />
               <Route path="/admin/schemes" element={<ProtectedRoute requireAdmin><AdminSchemesPage /></ProtectedRoute>} />
-              
+
+              {/* 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </AuthProvider>
       </BrowserRouter>
+
     </TooltipProvider>
   </QueryClientProvider>
 );
